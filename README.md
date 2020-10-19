@@ -15,4 +15,5 @@
 |:------------:|:------------------------------------:|
 |   LEDBlink   |     Use Delay Achieve LED Blink      |
 |  LEDButton   | Read User Button  Achieve LED  Blink |
+|     PWM      |               Just PWM               |
 </details>
