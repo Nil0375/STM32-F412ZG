@@ -17,4 +17,5 @@
 |  LEDButton   | Read User Button  Achieve LED  Blink |
 |     PWM      |               Just PWM               |
 |    Timer     |     Use Timer Achieve LED Blink      |
+|     UART     |    Use UART Send to ST-Link v2.1     |
 </details>
