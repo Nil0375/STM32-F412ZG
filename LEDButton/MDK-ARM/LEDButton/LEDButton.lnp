@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"ledbutton\startup_stm32f401xe.o"
+"ledbutton\main.o"
+"ledbutton\gpio.o"
+"ledbutton\usart.o"
+"ledbutton\stm32f4xx_it.o"
+"ledbutton\stm32f4xx_hal_msp.o"
+"ledbutton\stm32f4xx_hal_tim.o"
+"ledbutton\stm32f4xx_hal_tim_ex.o"
+"ledbutton\stm32f4xx_hal_uart.o"
+"ledbutton\stm32f4xx_hal_rcc.o"
+"ledbutton\stm32f4xx_hal_rcc_ex.o"
+"ledbutton\stm32f4xx_hal_flash.o"
+"ledbutton\stm32f4xx_hal_flash_ex.o"
+"ledbutton\stm32f4xx_hal_flash_ramfunc.o"
+"ledbutton\stm32f4xx_hal_gpio.o"
+"ledbutton\stm32f4xx_hal_dma_ex.o"
+"ledbutton\stm32f4xx_hal_dma.o"
+"ledbutton\stm32f4xx_hal_pwr.o"
+"ledbutton\stm32f4xx_hal_pwr_ex.o"
+"ledbutton\stm32f4xx_hal_cortex.o"
+"ledbutton\stm32f4xx_hal.o"
+"ledbutton\stm32f4xx_hal_exti.o"
+"ledbutton\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "LEDButton\LEDButton.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "LEDButton.map" -o LEDButton\LEDButton.axf
