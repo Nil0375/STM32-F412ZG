@@ -11,11 +11,12 @@
 <details markdown="1" open="">
 <summary></summary>
 
-| Project Name |             introduction             |
-|:------------:|:------------------------------------:|
-|   LEDBlink   |     Use Delay Achieve LED Blink      |
-|  LEDButton   | Read User Button  Achieve LED  Blink |
-|     PWM      |               Just PWM               |
-|    Timer     |     Use Timer Achieve LED Blink      |
-|     UART     |    Use UART Send to ST-Link v2.1     |
+| Project Name |               introduction                |
+|:------------:|:-----------------------------------------:|
+|   LEDBlink   |        Use Delay Achieve LED Blink        |
+|  LEDButton   |   Read User Button  Achieve LED  Blink    |
+|     PWM      |                 Just PWM                  |
+|    Timer     |        Use Timer Achieve LED Blink        |
+|     UART     |      Use UART2 Send to ST-Link v2.1       |
+|     CDC      | Use CDC(Virtual Com Port) Send Data to PC |
 </details>
