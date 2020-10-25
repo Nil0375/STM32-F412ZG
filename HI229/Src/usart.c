@@ -47,7 +47,7 @@ void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
-	usart2_rcv_len=0;
+	
 
 }
 /* USART3 init function */
@@ -171,29 +171,8 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 } 
 
 /* USER CODE BEGIN 1 */
-bool uart2startRx=false;
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-	//if(huart->Instance==USART2){
-	if(RxBuffer[0]==0x5A&&uart2startRx==false&&HI229_crc_check==false){
-		uart2startRx=true;
-		//printf("UART2 Rx START!\r\n");
-	}
-	if(uart2startRx==true){
-		usart2_rec_buffer[usart2_rcv_len++]=RxBuffer[0];
-		HAL_GPIO_TogglePin(LD2_GPIO_Port,LD2_Pin);
-	}
-	//}
-	/*if(usart2_rcv_len==82){
-			HAL_UART_Transmit(&huart3,(uint8_t *)usart2_rec_buffer,usart2_rcv_len,5000);
-			HAL_GPIO_TogglePin(LD3_GPIO_Port,LD3_Pin);
-			memset(usart2_rec_buffer,0,usart2_rcv_len);
-			usart2_rcv_len=0;
-	}*/
-	if(usart2_rcv_len<=82){
-		HAL_UART_Receive_IT(&huart2, (uint8_t *)RxBuffer, 1);
-	}else{
-		uart2startRx=false;
-	}
+	HI229_CallBack(huart);
 }
 /* USER CODE END 1 */
 

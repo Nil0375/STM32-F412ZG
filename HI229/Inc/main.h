@@ -33,14 +33,13 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdbool.h"
+#include "stdio.h"
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-extern bool HI229_crc_check;
-extern uint8_t RxBuffer[1];
-extern uint8_t usart2_rec_buffer[96];
-extern short usart2_rcv_len;
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

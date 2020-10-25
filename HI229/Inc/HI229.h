@@ -9,7 +9,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+extern UART_HandleTypeDef * HI229_uart;
 
+//extern bool HI229_crc_check;
+extern uint8_t HI229_RxBuffer[1];
+extern uint8_t HI229_Rx_Data[96];
+extern uint8_t HI229_Rx_Data_len;
+//extern bool UartStartRx;
 __packed typedef struct
 {
     uint8_t tag; /* data packet tag */
@@ -27,10 +33,15 @@ extern __align(4) id0x91_t dat;
 
 void crc16_update(uint16_t *, const uint8_t *, uint32_t );
 
-void crc_check(uint8_t *buf);
+bool crc_check(uint8_t *buf);
 
 void HI229(uint8_t *buf);
 
+void HI229_Init(UART_HandleTypeDef *);
+
+void HI229_CallBack(UART_HandleTypeDef *);
+
+void HI229_Update(void);
 #ifdef __cplusplus
 }
 #endif

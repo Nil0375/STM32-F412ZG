@@ -26,8 +26,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdio.h"
-#include "string.h"
+
+
 #include "HI229.h"
 /* USER CODE END Includes */
 
@@ -58,10 +58,7 @@ int fputc(int ch, FILE *f)
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-bool HI229_crc_check=false;
-uint8_t RxBuffer[1];
-uint8_t usart2_rec_buffer[96];
-short usart2_rcv_len;
+
 
 /* USER CODE END PD */
 
@@ -120,7 +117,7 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 	//HAL_UART_Transmit(&huart3,(uint8_t *)"HIHI!",sizeof("HIHI!"),500);
-	HAL_UART_Receive_IT(&huart2, (uint8_t *)RxBuffer, 1);
+	HI229_Init(&huart2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -128,15 +125,8 @@ int main(void)
   while (1)
   {
 		//HAL_Delay(2);
-		if(usart2_rcv_len>=82){
-			HI229_crc_check=true;
-			//HAL_UART_Transmit(&huart3,(uint8_t *)usart2_rec_buffer,usart2_rcv_len,5000);
-			HI229(usart2_rec_buffer);
-			memset(usart2_rec_buffer,0,usart2_rcv_len);
-			usart2_rcv_len=0;
-			HI229_crc_check=false;
-			HAL_UART_Receive_IT(&huart2, (uint8_t *)RxBuffer, 1);
-		}
+		HI229_Update();
+		printf("mag: %f\t%f\t%f\r\n",dat.mag[0],dat.mag[1],dat.mag[2]);
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
   }

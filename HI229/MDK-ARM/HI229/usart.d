@@ -34,6 +34,6 @@ hi229\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 hi229\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 hi229\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 hi229\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+hi229\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 hi229\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 hi229\usart.o: ../Inc/HI229.h
-hi229\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
